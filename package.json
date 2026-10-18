@@ -1,0 +1,21 @@
+{
+  "name": "livetalk-translator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Two-way live voice translator (Telugu, English, Hindi, Tamil, Kannada, Malayalam)",
+  "scripts": {
+    "add:android": "cap add android && bash scripts/patch-manifest.sh",
+    "sync": "cap sync android && bash scripts/patch-manifest.sh",
+    "open": "cap open android",
+    "serve": "npx http-server www -p 8080"
+  },
+  "dependencies": {
+    "@capacitor-community/speech-recognition": "^6.0.0",
+    "@capacitor-community/text-to-speech": "^5.0.0",
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}

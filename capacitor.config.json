@@ -1,0 +1,11 @@
+{
+  "appId": "com.livetalk.translator",
+  "appName": "LiveTalk Translator",
+  "webDir": "www",
+  "plugins": {
+    "CapacitorHttp": { "enabled": true }
+  },
+  "android": {
+    "backgroundColor": "#0f172a"
+  }
+}

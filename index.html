@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>LiveTalk Translator</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <i class="fa-solid fa-language"></i>
+        <span>LiveTalk</span>
+      </div>
+      <div class="header-actions">
+        <button id="clear-history-btn" title="Clear history"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+    </header>
+
+    <section class="lang-bar">
+      <div class="lang-box">
+        <label for="lang1-select">Person 1</label>
+        <select id="lang1-select">
+          <option value="te-IN|te" selected>Telugu (తెలుగు)</option>
+          <option value="en-US|en">English (US)</option>
+          <option value="hi-IN|hi">Hindi (हिन्दी)</option>
+          <option value="ta-IN|ta">Tamil (தமிழ்)</option>
+          <option value="kn-IN|kn">Kannada (ಕನ್ನಡ)</option>
+          <option value="ml-IN|ml">Malayalam (മലയാളം)</option>
+        </select>
+      </div>
+
+      <button id="swap-lang-btn" class="swap-btn" title="Swap languages">
+        <i class="fa-solid fa-repeat"></i>
+      </button>
+
+      <div class="lang-box">
+        <label for="lang2-select">Person 2</label>
+        <select id="lang2-select">
+          <option value="en-US|en" selected>English (US)</option>
+          <option value="te-IN|te">Telugu (తెలుగు)</option>
+          <option value="hi-IN|hi">Hindi (हिन्दी)</option>
+          <option value="ta-IN|ta">Tamil (தமிழ்)</option>
+          <option value="kn-IN|kn">Kannada (ಕನ್ನಡ)</option>
+          <option value="ml-IN|ml">Malayalam (മലയാളം)</option>
+        </select>
+      </div>
+    </section>
+
+    <div id="status-card" class="status-card idle">
+      <div class="wave-container">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+      </div>
+      <span id="status-text">Tap a microphone below to start speaking</span>
+    </div>
+
+    <main id="chat-stream" class="chat-stream"></main>
+
+    <footer class="mic-footer">
+      <div class="mic-wrapper">
+        <button id="mic1-btn" class="mic-btn primary" aria-label="Person 1 microphone">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <span id="mic1-label" class="mic-subtext">Speak Telugu</span>
+      </div>
+
+      <div class="mic-wrapper">
+        <button id="mic2-btn" class="mic-btn secondary" aria-label="Person 2 microphone">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <span id="mic2-label" class="mic-subtext">Speak English</span>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
